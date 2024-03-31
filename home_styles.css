@@ -1,0 +1,200 @@
+/* Cards estilos CSS */
+
+/* Paleta de colores:
+    -#3e31fa
+    -#0f2145
+    -#f3f5f8
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #ffffff;
+
+}
+
+/* --------------------------------------------- */
+/* Header bar styles */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f3f5f8;
+    padding: 20px 10%;
+    border-block-end: 1.8px solid rgba(15, 33, 69, 0.1)
+}
+
+.logo {
+    font-family: 'Brown', sans-serif;
+    font-size: larger;
+    margin-right: auto;
+    color: #0f2145;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+.logo:hover {
+    color: #3e31fa;
+    transform: scale(1.1);
+}
+
+
+/* Menu icons */
+header ul {
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    list-style: none;
+}
+
+.menu a {
+    color: #0f2145;
+    text-decoration: none;
+}
+
+.menu i {
+    font-size: 18px;
+}
+  
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+  
+.menu a span {
+    transition: transform 0.2s ease-out;
+}
+  
+.menu a span:first-child {
+    display: inline-block;
+    padding: 5px 30px;
+}
+  
+.menu a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+  
+.menu a:hover span:first-child {
+    transform: translateY(100%);
+}
+  
+.menu a:hover span:last-child, .menu[data-animation] a:hover span:last-child {
+    transform: none;
+}
+  
+/* Animations */
+.menu[data-animation="to-top"] a span:last-child {
+    transform: translateY(100%);
+}
+  
+.menu[data-animation="to-top"] a:hover span:first-child {
+    transform: translateY(-100%);
+}
+
+
+/* --------------------------------------------- */
+/* Ball animation styles */
+/*
+.ball {
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bounce {
+    width: 200px;
+    height: 200px;
+    background: #0f2145;
+    transition: all .3s ease-in-out;
+}
+
+.ball img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.bounce:hover {
+    border-radius: 50%;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+*/
+
+.ball {
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bounce {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #0f2145;
+    position: relative;
+    animation: bounce 2s infinite;
+    animation-timing-function: cubic-bezier(8,.77,1,.28);
+    top: 400px;
+    /*
+    animation-name
+    animation-duration
+    animation-timing-function
+    animation-delay
+    animation-iteration-count
+    animation-direction
+    */
+}
+
+.bounce img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    15% {transform: translateY(-450px);}
+    30% {transform: translateY(0);}
+    45% {transform: translateY(-200px);}
+    60% {transform: translateY(0);}
+    75% {transform: translateY(-100px);}
+    90% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+    
+}
+
+/*
+@keyframes up-down {
+    0%  {top: 0px; background: yellow;}
+    25% {top: 500px; background: #0f2145; transform: rotate(540deg);}
+    50% {top: 100px; background-color: orange; transform: rotate(0deg);}
+    75% {top: 500px; background: #0f2145; transform: rotate(90deg);}
+    85% {top: 300px; background: green; transform: rotate(0deg);}
+    100% {top: 500px; background: #0f2145; transform: rotate(45deg);} 
+}
+*/
